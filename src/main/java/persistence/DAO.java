@@ -6,6 +6,7 @@ public class DAO {
 	//private static PromocionDAO promocionDAO;
 	//private static ItinerarioDAO itinerarioDAO;
 	private static TipoAtraccionDAO tipoAtraccionDAO;
+	private static TipoPromocionDAO tipoPromocionDAO;
 /*
 	public static AtraccionDAO getAtraccionDAO() {
 		if (atraccionDAO == null) {
@@ -45,5 +46,13 @@ public class DAO {
 		}
 
 		return tipoAtraccionDAO;
+	}
+	
+	public static TipoPromocionDAO getTipoPromocionDAO() {
+		if (tipoPromocionDAO == null) {
+			tipoPromocionDAO = new TipoPromocionDAO();
+		}
+
+		return tipoPromocionDAO;
 	}
 }

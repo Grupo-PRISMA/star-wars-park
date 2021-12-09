@@ -19,11 +19,11 @@
 		</c:if>
  -->
  		<div class="bg-light p-4 mb-3 rounded">
-			<h2>Agregar / Modificar: Tipo de Atracción</h2>
+			<h2>Agregar / Modificar: Tipo de Promoción</h2>
 		</div>
-		<form action="/star-wars-park/tipo-atraccion/editar.do" method="post">
-		<input type="hidden" name="id" value="${tipo_atraccion}">
-			Tipo <input type="text" name="nuevo" value="${tipo_atraccion}">
+		<form action="/star-wars-park/tipo-promocion/editar.do" method="post">
+		<input type="hidden" name="id" value="${tipo_promocion}">
+			Tipo <input type="text" name="nuevo" value="${tipo_promocion}">
 			<button type="submit" class="btn btn-primary">Guardar</button>
 			<a onclick="window.history.back();" class="btn btn-secondary" role="button">
 				Cancelar

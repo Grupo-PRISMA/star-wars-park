@@ -28,33 +28,33 @@
 		</c:if>
 
 		<div class="bg-light p-4 mb-3 rounded">
-			<h1>Tipo de Atracción</h1>
+			<h1>Tipo de Promoción</h1>
 		</div>
 
 		<div class="mb-3">
-			<a href="/star-wars-park/tipo-atraccion/editar.do" class="btn btn-primary" role="button">
-				<i class="bi bi-plus-lg"></i> Nuevo Tipo Atracción
+			<a href="/star-wars-park/tipo-promocion/editar.do" class="btn btn-primary" role="button">
+				<i class="bi bi-plus-lg"></i> Nuevo Tipo Promoción
 			</a>
 		</div>
 		
 		<table class="table table-stripped table-hover">
 			<thead>
 				<tr>
-					<th>Tipo Atracción</th>
+					<th>Tipo Promoción</th>
 					<th>Activo</th>
 					<th>Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${tipo_atracciones}" var="tipo">
+				<c:forEach items="${tipo_promociones}" var="tipo">
 					<tr>
 						<td><c:out value="${tipo.getTipo()}"></c:out></td>
 						<td><c:out value="${tipo.isActivo() ? 'Si' : 'No'}"></c:out></td>
 						<td>
-							<a href="/star-wars-park/tipo-atraccion/editar.do?id=${tipo.getTipo()}" class="btn btn-light rounded-0" role="button">
+							<a href="/star-wars-park/tipo-promocion/editar.do?id=${tipo.getTipo()}" class="btn btn-light rounded-0" role="button">
 								<i class="bi bi-pencil-fill"></i>
 							</a>
-							<a href="/star-wars-park/tipo-atraccion/borrar.do?id=${tipo.getTipo()}"
+							<a href="/star-wars-park/tipo-promocion/borrar.do?id=${tipo.getTipo()}"
 							class="btn btn-<c:out value="${tipo.isActivo() ? 'success' : 'danger'}"></c:out> rounded" role="button">
 								<c:choose>
 									<c:when test="${tipo.isActivo()}">
