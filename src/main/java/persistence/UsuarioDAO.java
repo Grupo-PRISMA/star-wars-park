@@ -35,7 +35,9 @@ public class UsuarioDAO extends DAOGenerico<Usuario> {
 		return super.ejecutarSelect("SELECT * FROM visitante WHERE id = " + id).get(0);
 	}
 	
-	public int actualizar(Usuario visitante) throws SQLException {
+	public int actualizar(String usuario, String nuevo) throws SQLException {
+		
+		
 		String sql = "UPDATE"
 						+ " visitante"
 					+ " SET"
@@ -51,7 +53,35 @@ public class UsuarioDAO extends DAOGenerico<Usuario> {
 	}
 	
 	public Usuario buscarPorUsuario(String usuario) throws SQLException {
-		return super.ejecutarSelect("SELECT * FROM visitante WHERE usuario = '" + usuario + "'").get(0);
+		ArrayList<Usuario> usuarios = super.ejecutarSelect("SELECT * FROM visitante WHERE usuario = '" + usuario + "'");
+		return usuarios.isEmpty() ? null : usuarios.get(0); 
+	}
+	
+	public int insertar(String usuario) throws SQLException {
+		String sql = "INSERT INTO"
+				+ " visitante"
+			+ " VALUES("
+				+ "'" + usuario + "'
+				+ "'" + usuario + "')";
+
+		Connection conexion = ConnectionProvider.getConexion();
+		PreparedStatement declaracion = conexion.prepareStatement(sql);
+		
+		return declaracion.executeUpdate();		
+	}
+	
+	public int borrarPorUsuario(String usuario) throws SQLException {
+		String sql = "UPDATE"
+						+ " visitantes"
+					+ " SET"
+						+ " activo = ((activo | 1) - (activo & 1))"
+					+ " WHERE"
+						+ " usuario = '" + usuario + "'";
+		
+		Connection conexion = ConnectionProvider.getConexion();
+		PreparedStatement declaracion = conexion.prepareStatement(sql);
+		
+		return declaracion.executeUpdate();
 	}
 
 }

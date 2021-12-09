@@ -11,7 +11,7 @@
 	<div class="col-lg-5 mx-auto p-3 py-md-5">
 
 		<main>
-			<h1>Turismo en Star Wars</h1>
+			<h1>Star Wars Park</h1>
 
 <%
 if (request.getAttribute("mensaje") != null) {
