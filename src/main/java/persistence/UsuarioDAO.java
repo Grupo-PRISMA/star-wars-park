@@ -35,8 +35,28 @@ public class UsuarioDAO extends DAOGenerico<Usuario> {
 		return super.ejecutarSelect("SELECT * FROM visitante WHERE id = " + id).get(0);
 	}
 	
-	public int actualizar(String usuario, String nuevo) throws SQLException {
+	public int actualizar(int id, String clave, String nombre, String preferencia, double presupuesto, double tiempo, int admin) throws SQLException {
+	
+		String sql = "UPDATE"
+						+ " visitante"
+					+ " SET"
+						+ " clave = '" + clave + "'"
+						+ ", nombre = '" + nombre + "'"
+						+ ", fk_preferencia = '" + preferencia + "'"
+						+ ", presupuesto = " + presupuesto
+						+ ", tiempo = " + tiempo
+						+ ", admin = " +  admin
+					+ " WHERE"
+						+ " id = " + id;
+		System.out.println(sql);
+		Connection conexion = ConnectionProvider.getConexion();
+		PreparedStatement declaracion = conexion.prepareStatement(sql);
 		
+		return declaracion.executeUpdate();
+	}
+	
+	
+	/*public int actualizar(int id, String clave, String nombre, double presupuesto, double tiempo, boolean admin) throws SQLException {
 		
 		String sql = "UPDATE"
 						+ " visitante"
@@ -50,19 +70,24 @@ public class UsuarioDAO extends DAOGenerico<Usuario> {
 		PreparedStatement declaracion = conexion.prepareStatement(sql);
 		
 		return declaracion.executeUpdate();
-	}
+	}*/
 	
 	public Usuario buscarPorUsuario(String usuario) throws SQLException {
 		ArrayList<Usuario> usuarios = super.ejecutarSelect("SELECT * FROM visitante WHERE usuario = '" + usuario + "'");
 		return usuarios.isEmpty() ? null : usuarios.get(0); 
 	}
 	
-	public int insertar(String usuario) throws SQLException {
+	public int insertar(String usuario, String clave, String nombre, String preferencia, double presupuesto, double tiempo, int admin) throws SQLException {
 		String sql = "INSERT INTO"
 				+ " visitante"
 			+ " VALUES("
-				+ "'" + usuario + "'
-				+ "'" + usuario + "')";
+				+ "'" + usuario + "'"
+				+ "'" + clave + "'"
+				+ "'" + nombre + "'"
+				+ "'" + preferencia + "'"
+				+ presupuesto +
+				+ tiempo +
+				+ admin + ")";
 
 		Connection conexion = ConnectionProvider.getConexion();
 		PreparedStatement declaracion = conexion.prepareStatement(sql);
@@ -70,13 +95,13 @@ public class UsuarioDAO extends DAOGenerico<Usuario> {
 		return declaracion.executeUpdate();		
 	}
 	
-	public int borrarPorUsuario(String usuario) throws SQLException {
+	public int borrarPorId(int id) throws SQLException {
 		String sql = "UPDATE"
-						+ " visitantes"
+						+ " visitante"
 					+ " SET"
 						+ " activo = ((activo | 1) - (activo & 1))"
 					+ " WHERE"
-						+ " usuario = '" + usuario + "'";
+						+ " id = " + id;
 		
 		Connection conexion = ConnectionProvider.getConexion();
 		PreparedStatement declaracion = conexion.prepareStatement(sql);

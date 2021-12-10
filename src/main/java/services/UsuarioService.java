@@ -17,16 +17,16 @@ public class UsuarioService {
 		return DAO.getUsuarioDAO().buscarTodo();
 	}
 	
-	public void borrar(String usuario) throws SQLException {
-		DAO.getUsuarioDAO().borrarPorUsuario(usuario);
+	public void borrar(int id) throws SQLException {
+		DAO.getUsuarioDAO().borrarPorId(id);
 	}
 	
-	public void actualizar(Usuario visitante, Usuario nuevo) throws SQLException {
-		DAO.getUsuarioDAO().actualizar(visitante, nuevo);
+	public void actualizar(int id, String clave, String nombre, String preferencia, double presupuesto, double tiempo, int admin) throws SQLException {
+		DAO.getUsuarioDAO().actualizar(id, clave, nombre, preferencia, presupuesto, tiempo, admin);
 	}
 
-	public void insertar(String tipo) throws SQLException {
-		DAO.getUsuarioDAO().insertar(tipo);
+	public void insertar(String usuario, String clave, String nombre, String preferencia, double presupuesto, double tiempo, int admin) throws SQLException {
+		DAO.getUsuarioDAO().insertar(usuario, clave, nombre, preferencia, presupuesto, tiempo, admin);
 	}
 /*
 	public Attraction create(String name, Integer cost, Double duration, Integer capacity) {

@@ -27,7 +27,7 @@ public class BorrarUsuarioServlet extends HttpServlet {
 		//Integer id = Integer.parseInt(req.getParameter("id"));
 
 		try {
-			this.usuarioService.borrar(req.getParameter("usuario"));
+			this.usuarioService.borrar(Integer.parseInt(req.getParameter("id")));
 		} catch (SQLException e) {
 			System.out.println("Error borrando usuario: " + e.getMessage());
 			e.printStackTrace();

@@ -2,6 +2,7 @@ package controller.usuario;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -9,7 +10,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.TipoAtraccion;
 import model.Usuario;
+import services.TipoAtraccionService;
 import services.UsuarioService;
 
 @WebServlet("/usuario/editar.do")
@@ -17,25 +20,35 @@ public class EditarUsuarioServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 7598291131560345626L;
 	private UsuarioService usuarioService;
+	private TipoAtraccionService tipoAtraccionService;
 
 	@Override
 	public void init() throws ServletException {
 		super.init();
 		this.usuarioService = new UsuarioService();
+		this.tipoAtraccionService = new TipoAtraccionService();
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int id = Integer.parseInt(req.getParameter("id"));
-		Usuario usuario = null;
+		Usuario usuario = new Usuario(0, null, null, 0, 0, null, null, false, false);
+		ArrayList<TipoAtraccion> tipos = new ArrayList<TipoAtraccion>();
 		
-		try {
-			usuario = this.usuarioService.buscar(id);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		String ide = req.getParameter("id");
+		
+		if(ide != null) {
+			int id = Integer.parseInt(ide);
+			try {
+				usuario = this.usuarioService.buscar(id);
+				tipos = this.tipoAtraccionService.listar();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
+
 		req.setAttribute("usuario", usuario);
+		req.setAttribute("tipos", tipos);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/usuario/editar.jsp");
 		dispatcher.forward(req, resp);
@@ -45,21 +58,22 @@ public class EditarUsuarioServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//Integer id = Integer.parseInt(req.getParameter("id"));
-		//String name = req.getParameter("name");
-		//Integer cost = Integer.parseInt(req.getParameter("cost"));
-		// Integer cost = req.getParameter("cost").trim() == "" ? null : Integer.parseInt(req.getParameter("cost"));
-		//Double duration = Double.parseDouble(req.getParameter("duration"));
-		//Integer capacity = Integer.parseInt(req.getParameter("capacity"));
-		String id = req.getParameter("id");
-		String nuevo = req.getParameter("nuevo");		
+		int id = Integer.parseInt(req.getParameter("id"));
+		String usuario = req.getParameter("usuario");
+		String clave = req.getParameter("clave");
+		String nombre = req.getParameter("nombre");
+		String preferencia = req.getParameter("preferencia");
+		double presupuesto = req.getParameter("presupuesto").trim() == "" ? null : Double.parseDouble(req.getParameter("presupuesto"));
+		double tiempo = Double.parseDouble(req.getParameter("tiempo"));
+		int admin = req.getParameter("admin") != null ? 1: 0;
 		
+		System.out.println(req.getParameter("admin"));
 		/*Attraction attraction =*/ 
 		try {
-			if (id.equals("")) {
-				this.usuarioService.insertar(nuevo);
+			if (id == 0) {
+				this.usuarioService.insertar(usuario, clave, nombre, preferencia, presupuesto, tiempo, admin);
 			} else {
-				this.usuarioService.actualizar(id, nuevo);
+				this.usuarioService.actualizar(id, clave, nombre, preferencia, presupuesto, tiempo, admin);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
