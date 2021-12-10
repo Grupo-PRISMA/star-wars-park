@@ -36,15 +36,16 @@ public class EditarUsuarioServlet extends HttpServlet {
 		
 		String ide = req.getParameter("id");
 		
-		if(ide != null) {
-			int id = Integer.parseInt(ide);
-			try {
-				usuario = this.usuarioService.buscar(id);
-				tipos = this.tipoAtraccionService.listar();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		try {	
+			tipos = this.tipoAtraccionService.listar();
+			
+			if(ide != null) {
+				int id = Integer.parseInt(ide);
+				usuario = this.usuarioService.buscar(id);	
 			}
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		req.setAttribute("usuario", usuario);
@@ -54,8 +55,6 @@ public class EditarUsuarioServlet extends HttpServlet {
 		dispatcher.forward(req, resp);
 	}
 
-	
-	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int id = Integer.parseInt(req.getParameter("id"));
@@ -63,12 +62,13 @@ public class EditarUsuarioServlet extends HttpServlet {
 		String clave = req.getParameter("clave");
 		String nombre = req.getParameter("nombre");
 		String preferencia = req.getParameter("preferencia");
-		double presupuesto = req.getParameter("presupuesto").trim() == "" ? null : Double.parseDouble(req.getParameter("presupuesto"));
+		double presupuesto = req.getParameter("presupuesto").trim() == "" ? null
+				: Double.parseDouble(req.getParameter("presupuesto"));
 		double tiempo = Double.parseDouble(req.getParameter("tiempo"));
-		int admin = req.getParameter("admin") != null ? 1: 0;
-		
-		System.out.println(req.getParameter("admin"));
-		/*Attraction attraction =*/ 
+		int admin = req.getParameter("admin") != null ? 1 : 0;
+
+		System.out.println(id);
+		/* Attraction attraction = */
 		try {
 			if (id == 0) {
 				this.usuarioService.insertar(usuario, clave, nombre, preferencia, presupuesto, tiempo, admin);
@@ -80,15 +80,17 @@ public class EditarUsuarioServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		if (true /*attraction.isValid()*/) {
+		if (true /* attraction.isValid() */) {
 			resp.sendRedirect("/star-wars-park/usuario/index.do");
 		} else {
-			/*req.setAttribute("attraction", attraction);
-
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/attractions/edit.jsp");
-			dispatcher.forward(req, resp);
-			*/
+			/*
+			 * req.setAttribute("attraction", attraction);
+			 * 
+			 * RequestDispatcher dispatcher =
+			 * getServletContext().getRequestDispatcher("/views/attractions/edit.jsp");
+			 * dispatcher.forward(req, resp);
+			 */
 		}
 	}
-	
+
 }

@@ -24,12 +24,14 @@
 		<form action="/star-wars-park/usuario/editar.do" method="post">
 		<input type="hidden" name="id" value="${usuario.getId()}">
 			
-			<!-- Usuario <c:out value= "${usuario.getUsuario()}"></c:out> 
-			Usuario <c:if test="${usuario.getId()==0)}"><c:out value="<input type="text" name="usuario" value="cecilia">">
-			</c:out></c:if> <c:out value= "${usuario.getUsuario()}"></c:out>
-			-->
-			Usuario <input type="text" disabled="disabled" name="usuario" value="${usuario.getUsuario()}">
 			
+			Usuario <c:if test="${usuario.getId() == 0}"><input type="text" name="usuario" value="${usuario.getUsuario()}"></c:if> 
+			<c:if test="${usuario.getId()== 1}"><c:out value= "${usuario.getUsuario()}"></c:out></c:if>
+			
+			<!-- 
+			Usuario <c:out value= "${usuario.getUsuario()}"></c:out> 
+			Usuario <input type="text" disabled="disabled" name="usuario" value="${usuario.getUsuario()}">
+			-->
 			<br>
 			Contraseña <input type="text" name="clave" value="${usuario.getClave()}">
 			<br>
@@ -37,10 +39,14 @@
 			<br>
 			Preferencia <select name="preferencia" >
 			<c:forEach items="${tipos}" var="tipo">
-				<option <c:if test="${usuario.getPreferencia().equals(tipo.getTipo())}"><c:out value="selected"/></c:if> value="<c:out value="${tipo.getTipo()}"></c:out>"><c:out value="${tipo.getTipo()}"></c:out></option>
-			</c:forEach>
-							
+
+				<option <c:if test="${usuario.getPreferencia().equals(tipo.getTipo())}"><c:out value="selected"/></c:if> 
+				value="<c:out value="${tipo.getTipo()}"></c:out>"><c:out value="${tipo.getTipo()}"></c:out></option>	
+				
+			
+			</c:forEach>		
 			</select>
+
 			<br>
 			Presupuesto <input type="text" name="presupuesto" value="${usuario.getPresupuesto()}">
 			<br>

@@ -48,7 +48,7 @@ public class UsuarioDAO extends DAOGenerico<Usuario> {
 						+ ", admin = " +  admin
 					+ " WHERE"
 						+ " id = " + id;
-		System.out.println(sql);
+		
 		Connection conexion = ConnectionProvider.getConexion();
 		PreparedStatement declaracion = conexion.prepareStatement(sql);
 		
@@ -79,16 +79,17 @@ public class UsuarioDAO extends DAOGenerico<Usuario> {
 	
 	public int insertar(String usuario, String clave, String nombre, String preferencia, double presupuesto, double tiempo, int admin) throws SQLException {
 		String sql = "INSERT INTO"
-				+ " visitante"
+				+ " visitante (usuario, clave, nombre, fk_preferencia, presupuesto, tiempo, admin)"
 			+ " VALUES("
 				+ "'" + usuario + "'"
-				+ "'" + clave + "'"
-				+ "'" + nombre + "'"
-				+ "'" + preferencia + "'"
-				+ presupuesto +
-				+ tiempo +
-				+ admin + ")";
-
+				+ ", '" + clave + "'"
+				+ ", '" + nombre + "'"
+				+ ", '" + preferencia + "'"
+				+ ", " + presupuesto +
+				", " + tiempo +
+				", " + admin + ")";
+		
+		System.out.println(sql);
 		Connection conexion = ConnectionProvider.getConexion();
 		PreparedStatement declaracion = conexion.prepareStatement(sql);
 		
