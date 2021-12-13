@@ -27,6 +27,10 @@ public class TipoAtraccionService {
 	public void insertar(String tipo) throws SQLException {
 		DAO.getTipoAtraccionDAO().insertar(tipo);
 	}
+	
+	public ArrayList<TipoAtraccion> listarActivos() throws SQLException {
+		return DAO.getTipoAtraccionDAO().buscarActivos();
+	}
 /*
 	public Attraction create(String name, Integer cost, Double duration, Integer capacity) {
 

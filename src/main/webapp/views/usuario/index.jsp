@@ -12,23 +12,15 @@
 
 	<main class="container">
 
-		<c:if test="${flash != null}">
-			<div class="alert alert-danger">
-				<p>
-					<c:out value="${flash}" />
-					<c:if test="${errors != null}">
-						<ul>
-							<c:forEach items="${errors}" var="entry">
-								<li><c:out value="${entry.getValue()}"></c:out></li>
-							</c:forEach>
-						</ul>
-					</c:if>
-				</p>
+		<c:if test="${mensaje != null}">
+			<div class="alert alert-success">
+				<c:out value="${mensaje}" />
 			</div>
+			<c:remove var="mensaje" scope="session" />
 		</c:if>
-
+		
 		<div class="bg-light p-4 mb-3 rounded">
-			<h1>Usuario</h1>
+			<h1>Usuarios</h1>
 		</div>
 
 		<div class="mb-3">
@@ -37,7 +29,7 @@
 			</a>
 		</div>
 		
-		<table class="table table-stripped table-hover">
+		<table id="lista" class="table table-stripped table-hover">
 			<thead>
 				<tr>
 					<th>Usuario</th>
@@ -82,6 +74,25 @@
 		</table>
 
 	</main>
+<script>
+$(document).ready(function() {
+    $('#lista').DataTable({language: {
+    	"search":"Buscar:",
+    	"lengthMenu": "Mostrar _MENU_",
+    	"info": "Mostrando _START_ - _END_ de _TOTAL_",
+    	"paginate": {
+            "first":      "Primero",
+            "last":       "Ultimo",
+            "next":       "Siguiente",
+            "previous":   "Anterior"
+    	},
+    	"emptyTable":     "No hay datos para mostrar",
+    	"infoEmpty":      "Mostrando 0 - 0 de 0",
+        "infoFiltered":   "(fitrados de _MAX_ elementos totales)",
+        "zeroRecords":    "No matching records found",
+    }});
+} );
+</script>
 
 </body>
 </html>

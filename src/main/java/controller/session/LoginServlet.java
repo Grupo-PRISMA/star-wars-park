@@ -35,7 +35,6 @@ public class LoginServlet extends HttpServlet {
     		usuarioIdentificado = loginService.login(usuario, clave);
     	} catch (Exception e) {
     		System.out.println("Error en login: " + e.getMessage());
-    		System.exit(1);
     	}
     	
     	if (usuarioIdentificado != null) {
@@ -43,6 +42,7 @@ public class LoginServlet extends HttpServlet {
     		resp.sendRedirect("index.jsp");    		
        	} else {
     		req.setAttribute("mensaje", "Nombre de usuario o contraseña incorrectos");
+    		req.setAttribute("tipo", "danger");
     		
     		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
     		dispatcher.forward(req, resp);

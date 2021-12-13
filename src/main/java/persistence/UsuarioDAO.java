@@ -28,26 +28,38 @@ public class UsuarioDAO extends DAOGenerico<Usuario> {
 	}
 	
 	public ArrayList<Usuario> buscarTodo() throws SQLException {
-		return super.ejecutarSelect("SELECT * FROM visitante ORDER BY nombre ASC");
+		return super.ejecutarSelect("SELECT * FROM visitante ORDER BY UPPER(usuario) ASC");
 	}
 	
 	public Usuario buscarPorId(int id) throws SQLException {
 		return super.ejecutarSelect("SELECT * FROM visitante WHERE id = " + id).get(0);
 	}
 	
-	public int actualizar(int id, String clave, String nombre, String preferencia, double presupuesto, double tiempo, int admin) throws SQLException {
-	
-		String sql = "UPDATE"
-						+ " visitante"
-					+ " SET"
-						+ " clave = '" + clave + "'"
-						+ ", nombre = '" + nombre + "'"
-						+ ", fk_preferencia = '" + preferencia + "'"
-						+ ", presupuesto = " + presupuesto
-						+ ", tiempo = " + tiempo
-						+ ", admin = " +  admin
-					+ " WHERE"
-						+ " id = " + id;
+//	public int actualizar(int id, String clave, String nombre, String preferencia, double presupuesto, double tiempo, int admin) throws SQLException {
+//		
+//		String sql = "UPDATE"
+//						+ " visitante"
+//					+ " SET"
+//						+ " clave = '" + clave + "'"
+//						+ ", nombre = '" + nombre + "'"
+//						+ ", fk_preferencia = '" + preferencia + "'"
+//						+ ", presupuesto = " + presupuesto
+//						+ ", tiempo = " + tiempo
+//						+ ", admin = " +  admin
+//					+ " WHERE"
+//						+ " id = " + id;
+		public int actualizar(Usuario usuario) throws SQLException {
+			String sql = "UPDATE"
+							+ " visitante"
+						+ " SET"
+							+ " clave = '" + usuario.getClave() + "'"
+							+ ", nombre = '" + usuario.getNombre() + "'"
+							+ ", fk_preferencia = '" + usuario.getPreferencia() + "'"
+							+ ", presupuesto = " + usuario.getPresupuesto()
+							+ ", tiempo = " + usuario.getTiempoDisponibleHs()
+							+ ", admin = " +  (usuario.isAdmin() ? 1 : 0)
+						+ " WHERE"
+							+ " id = " + usuario.getId();
 		
 		Connection conexion = ConnectionProvider.getConexion();
 		PreparedStatement declaracion = conexion.prepareStatement(sql);
@@ -77,19 +89,30 @@ public class UsuarioDAO extends DAOGenerico<Usuario> {
 		return usuarios.isEmpty() ? null : usuarios.get(0); 
 	}
 	
-	public int insertar(String usuario, String clave, String nombre, String preferencia, double presupuesto, double tiempo, int admin) throws SQLException {
+	//public int insertar(String usuario, String clave, String nombre, String preferencia, double presupuesto, double tiempo, int admin) throws SQLException {
+	public int insertar(Usuario usuario) throws SQLException {
+//		String sql = "INSERT INTO"
+//				+ " visitante (usuario, clave, nombre, fk_preferencia, presupuesto, tiempo, admin)"
+//			+ " VALUES("
+//				+ "'" + usuario + "'"
+//				+ ", '" + clave + "'"
+//				+ ", '" + nombre + "'"
+//				+ ", '" + preferencia + "'"
+//				+ ", " + presupuesto +
+//				", " + tiempo +
+//				", " + admin + ")";
+
 		String sql = "INSERT INTO"
 				+ " visitante (usuario, clave, nombre, fk_preferencia, presupuesto, tiempo, admin)"
 			+ " VALUES("
-				+ "'" + usuario + "'"
-				+ ", '" + clave + "'"
-				+ ", '" + nombre + "'"
-				+ ", '" + preferencia + "'"
-				+ ", " + presupuesto +
-				", " + tiempo +
-				", " + admin + ")";
-		
-		System.out.println(sql);
+				+ "'" + usuario.getUsuario() + "'"
+				+ ", '" + usuario.getClave() + "'"
+				+ ", '" + usuario.getNombre() + "'"
+				+ ", '" + usuario.getPreferencia() + "'"
+				+ ", " + usuario.getPresupuesto() +
+				", " + usuario.getTiempoDisponibleHs() +
+				", " + usuario.isAdmin() + ")";
+
 		Connection conexion = ConnectionProvider.getConexion();
 		PreparedStatement declaracion = conexion.prepareStatement(sql);
 		

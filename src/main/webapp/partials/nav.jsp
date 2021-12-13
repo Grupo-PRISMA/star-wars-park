@@ -1,5 +1,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<%
+String urlParte = request.getServletPath().replaceAll("/views/", "");
+
+int fin = urlParte.indexOf('/', 1);
+
+String seccion = "";
+
+if (fin != -1) {
+	seccion = urlParte.substring(0, fin);
+}
+%>
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 	<div class="container">
 		<a class="navbar-brand" href="/star-wars-park/index.jsp">Star Wars Park</a>
@@ -11,19 +23,21 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav me-auto mb-2 mb-md-0">
 				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="/star-wars-park/usuario/index.do">Usuarios</a>
+					<a class="nav-link <%= seccion.equals("usuario") ? "active" : "" %>" aria-current="page" href="/star-wars-park/usuario/index.do">
+						Usuarios
+					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="/star-wars-park/tipo-atraccion/index.do">Tipo Atracciones</a>
+					<a class="nav-link <%= seccion.equals("tipo_atraccion") ? "active" : "" %>" aria-current="page" href="/star-wars-park/tipo-atraccion/index.do">Tipo Atracciones</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="/star-wars-park/atracciones/index.do">Atracciones</a>
+					<a class="nav-link <%= seccion.equals("atraccion") ? "active" : "" %>" aria-current="page" href="/star-wars-park/atraccion/index.do">Atracciones</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="/star-wars-park/tipo-promocion/index.do">Tipo Promociones</a>
+					<a class="nav-link <%= seccion.equals("tipo_promocion") ? "active" : "" %>" aria-current="page" href="/star-wars-park/tipo-promocion/index.do">Tipo Promociones</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="/star-wars-park/promociones/index.do">Promociones</a>
+					<a class="nav-link <%= seccion.equals("promocion") ? "active" : "" %>" aria-current="page" href="/star-wars-park/promociones/index.do">Promociones</a>
 				</li>
 				<!--
 				<li class="nav-item">

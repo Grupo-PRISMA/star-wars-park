@@ -68,4 +68,14 @@ public class TipoAtraccionDAO extends DAOGenerico<TipoAtraccion> {
 		
 		return declaracion.executeUpdate();		
 	}
+	
+	public TipoAtraccion buscarPorTipo(String tipo) throws SQLException {
+		ArrayList<TipoAtraccion> tipos = super.ejecutarSelect("SELECT * FROM tipo_de_atraccion WHERE tipo = '" + tipo + "'");
+		return tipos.isEmpty() ? null : tipos.get(0);
+	}
+	
+	public ArrayList<TipoAtraccion> buscarActivos() throws SQLException {
+		return super.ejecutarSelect("SELECT * FROM tipo_de_atraccion WHERE activo = 1 ORDER BY tipo ASC");
+	}
+
 }

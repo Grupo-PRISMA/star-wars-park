@@ -13,20 +13,9 @@
 		<main>
 			<h1>Star Wars Park</h1>
 
-<%
-if (request.getAttribute("mensaje") != null) {
-%>
-				<div class="alert alert-danger">
-					<p><%= request.getAttribute("mensaje") %>
-				</div>
-<%	
-}
-%>
 			<c:if test="${mensaje != null}">
-				<div class="alert alert-danger">
-					<p>
-						<c:out value="${mensaje}" />
-					</p>
+				<div class="alert alert-<c:out value="${tipo}" />">
+					<p><c:out value="${mensaje}" /></p>
 				</div>
 			</c:if>
 

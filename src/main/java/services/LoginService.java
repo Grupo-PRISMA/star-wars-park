@@ -8,6 +8,7 @@ import model.Usuario;
 import persistence.DAO;
 //import persistence.UserDAO;
 import persistence.UsuarioDAO;
+import utils.Crypt;
 //import persistence.commons.DAOFactory;
 
 public class LoginService {
@@ -19,7 +20,9 @@ public class LoginService {
     	/*if (user.isNull() || !user.checkPassword(password)) {
     		usuarioEncontrado = NullUser.build();
     	}*/
-    	if (usuarioEncontrado != null && usuarioEncontrado.getClave().equals(clave)) {
+    	System.out.println(usuarioEncontrado);
+    	System.out.println(Crypt.match(clave, usuarioEncontrado.getClave()));
+    	if (usuarioEncontrado != null && Crypt.match(clave, usuarioEncontrado.getClave())) {
     		//usuarioEncontrado = NullUser.build();
     		return usuarioEncontrado;
     	}
