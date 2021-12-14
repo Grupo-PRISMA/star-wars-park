@@ -7,10 +7,10 @@ public class User {
 	private Integer id;
 	private String username, password;
 	private Boolean admin;
-	private Integer coins;
+	private Double coins;
 	private Double time;
 
-	public User(Integer id, String username, String password, Integer coins, Double time, Boolean admin) {
+	public User(Integer id, String username, String password, Double coins, Double time, Boolean admin) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -20,18 +20,18 @@ public class User {
 		this.admin = admin;
 	}
 
-	public void addToItinerary(Attraction attraction) {
-		this.coins -= attraction.getCost();
-		this.time -= attraction.getDuration();
+	public void addToItinerary(Atraccion atraccion) {
+		this.coins -= atraccion.getCosto();
+		this.time -= atraccion.getDuracion();
 		// TODO agregar a su lista
 	}
 
-	public boolean canAfford(Attraction attraction) {
-		return attraction.getCost() <= this.coins;
+	public boolean canAfford(Atraccion attraction) {
+		return attraction.getCosto() <= this.coins;
 	}
 
-	public boolean canAttend(Attraction attraction) {
-		return attraction.getDuration() <= this.time;
+	public boolean canAttend(Atraccion attraction) {
+		return attraction.getDuracion() <= this.time;
 	}
 
 	public boolean checkPassword(String password) {
@@ -43,7 +43,7 @@ public class User {
 		return admin;
 	}
 
-	public Integer getCoins() {
+	public Double getCoins() {
 		return coins;
 	}
 
@@ -75,7 +75,7 @@ public class User {
 		this.admin = admin;
 	}
 
-	public void setCoins(Integer coins) {
+	public void setCoins(Double coins) {
 		this.coins = coins;
 	}
 

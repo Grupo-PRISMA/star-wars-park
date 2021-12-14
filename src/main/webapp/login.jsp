@@ -13,9 +13,20 @@
 		<main>
 			<h1>Star Wars Park</h1>
 
+<%-- <%
+if (request.getAttribute("mensaje") != null) {
+%>
+				<div class="alert alert-danger">
+					<p><%= request.getAttribute("mensaje") %>
+				</div>
+<%	
+}
+%> --%>
 			<c:if test="${mensaje != null}">
-				<div class="alert alert-<c:out value="${tipo}" />">
-					<p><c:out value="${mensaje}" /></p>
+				<div class="alert alert-danger">
+					<p>
+						<c:out value="${mensaje}" />
+					</p>
 				</div>
 			</c:if>
 
@@ -23,12 +34,12 @@
 
 				<div class="mb-3">
 					<label for="usuario" class="form-label">Usuario</label>
-					<input class="form-control" name="usuario" value="admin">
+					<input class="form-control" name="usuario" value="">
 				</div>
 
 				<div class="mb-3">
 					<label for="clave" class="form-label">Contraseña</label>
-					<input type="password" class="form-control" name="clave" value="admin">
+					<input type="password" class="form-control" name="clave" value="">
 				</div>
 
 				<div class="d-grid gap-2">

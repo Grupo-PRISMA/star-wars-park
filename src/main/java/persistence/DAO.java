@@ -1,13 +1,14 @@
 package persistence;
 
-public class DAO {
-	//private static AtraccionDAO atraccionDAO;
+
+public class DAO{
+	private static AtraccionDAO atraccionDAO;
 	private static UsuarioDAO usuarioDAO;
 	//private static PromocionDAO promocionDAO;
 	//private static ItinerarioDAO itinerarioDAO;
 	private static TipoAtraccionDAO tipoAtraccionDAO;
 	private static TipoPromocionDAO tipoPromocionDAO;
-/*
+
 	public static AtraccionDAO getAtraccionDAO() {
 		if (atraccionDAO == null) {
 			atraccionDAO = new AtraccionDAO();
@@ -15,7 +16,7 @@ public class DAO {
 
 		return atraccionDAO;
 	}
-*/
+
 	public static UsuarioDAO getUsuarioDAO() {
 		if (usuarioDAO == null) {
 			usuarioDAO = new UsuarioDAO();

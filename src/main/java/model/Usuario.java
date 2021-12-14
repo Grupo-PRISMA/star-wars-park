@@ -193,4 +193,23 @@ public class Usuario {
 		// this.password en realidad es el hash del password
 		return Crypt.match(clave, this.clave);
 	}
+	
+	public void addToItinerary(Atraccion atraccion) {
+		this.presupuesto -= atraccion.getCosto();
+		this.tiempoDisponibleHs -= atraccion.getDuracion();
+		// TODO agregar a su lista
+	}
+
+	public boolean puedePagar(Atraccion atraccion) {
+		return atraccion.getCosto() <= this.presupuesto;
+	}
+
+	public boolean tieneTiempo(Atraccion atraccion) {
+		return atraccion.getDuracion() <= this.tiempoDisponibleHs;
+	}
+
+	public boolean checkPassword(String password) {
+		// this.password en realidad es el hash del password
+		return Crypt.match(password, this.clave);
+	}
 }

@@ -28,12 +28,12 @@
 		</c:if>
 
 		<div class="bg-light p-4 mb-3 rounded">
-			<h1>Estas son las atracciones de la Tierra Media</h1>
+			<h1>Estas son las atracciones de Star Wars</h1>
 		</div>
 
 		<c:if test="${usuario.isAdmin()}">
 			<div class="mb-3">
-				<a href="/turismo/attractions/create.do" class="btn btn-primary"
+				<a href="/star-wars-park/atraccion/create.do" class="btn btn-primary"
 					role="button"> <i class="bi bi-plus-lg"></i> Nueva Atracción
 				</a>
 			</div>
@@ -49,28 +49,26 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${attractions}" var="attraction">
+				<c:forEach items="${atracciones}" var="atraccion">
 					<tr>
-						<td><strong><c:out value="${attraction.name}"></c:out></strong>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Cras pretium eros urna. Sed quis erat congue, bibendum tortor
-								malesuada, iaculis diam. Ut ut imperdiet sapien.</p></td>
-						<td><c:out value="${attraction.cost}"></c:out></td>
-						<td><c:out value="${attraction.duration}"></c:out></td>
-						<td><c:out value="${attraction.capacity}"></c:out></td>
+						<td><strong><c:out value="${atraccion.getNombre()}"></c:out></strong>
+							<p><c:out value="${atraccion.getInfo()}"></c:out></p></td>
+						<td><c:out value="${atraccion.getCosto()}"></c:out></td>
+						<td><c:out value="${atraccion.getDuracion()}"></c:out></td>
+						<td><c:out value="${atraccion.getCupo()}"></c:out></td>
 
-						<td><c:if test="${usuario.admin}">
-								<a href="/turismo/attractions/edit.do?id=${attraction.id}"
+						<td><c:if test="${usuario.isAdmin()}">
+								<a href="/star-wars-park/atraccion/edit.do?id=${atraccion.getId()}" 
 									class="btn btn-light rounded-0" role="button"><i
 									class="bi bi-pencil-fill"></i></a>
-								<a href="/turismo/attractions/delete.do?id=${attraction.id}"
+								<a href="/star-wars-park/atraccion/delete.do?id=${atraccion.getId()}"
 									class="btn btn-danger rounded" role="button"><i
 									class="bi bi-x-circle-fill"></i></a>
 							</c:if> <c:choose>
 
 								<c:when
-									test="${usuario.canAfford(attraction) && usuario.canAttend(attraction) && attraction.canHost(1)}">
-									<a href="/turismo/attractions/buy.do?id=${attraction.id}"
+									test="${usuario.puedePagar(atraccion) && usuario.tieneTiempo(atraccion) && atraccion.tieneCupo(1)}">
+									<a href="/star-wars-park/atraccion/buy.do?id=${atraccion.id}"
 										class="btn btn-success rounded" role="button">Comprar</a>
 								</c:when>
 								<c:otherwise>
