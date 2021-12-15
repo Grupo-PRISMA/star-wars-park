@@ -33,7 +33,7 @@ if (request.getAttribute("mensaje") != null) {
 			<form action="/star-wars-park/login" method="post">
 
 				<div class="mb-3">
-					<label for="usuario" class="form-label">Usuario</label>
+					<label for="usuario" class="form-label">usuario</label>
 					<input class="form-control" name="usuario" value="">
 				</div>
 
@@ -43,7 +43,7 @@ if (request.getAttribute("mensaje") != null) {
 				</div>
 
 				<div class="d-grid gap-2">
-					<button type="submit" class="btn btn-lg btn-primary">Ingresar</button>
+					<button type="submit" class="btn btn-lg btn-primary">ingresar</button>
 				</div>
 			</form>
 

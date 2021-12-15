@@ -2,12 +2,12 @@
 
 <html>
 <head>
-
 <jsp:include page="partials/head.jsp"></jsp:include>
 
 </head>
 <body>
 	<jsp:include page="partials/nav.jsp"></jsp:include>
+	
 
 	<main class="container">
 		<div class="bg-light p-4 rounded">
@@ -16,6 +16,8 @@
 			</h1>
 		</div>
 	</main>
+	
+	<hr>
 	
 	<div id="carouselExampleCaptions" class="carousel slide"
 		data-bs-ride="carousel">
@@ -66,9 +68,7 @@
 		</button>
 	</div>
 	
-	<button class="btn btn-primary" type="button"
-		data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-		aria-controls="offcanvasRight">Tu itinerario</button>
+	<hr>
 
 	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
 		aria-labelledby="offcanvasRightLabel">
@@ -79,8 +79,7 @@
 		</div>
 		<div class="offcanvas-body">contenido del itinerario
 		</div>
-		
-		
+			
 	</div>
 
 	<div class="wrapper">
@@ -121,12 +120,12 @@
 										aria-label="Close"></button>
 								</div>
 								<div class="modal-body">
-									<p>Se añadiran a tu carrito:</p>
+									<p>Se agregara a tu carrito:</p>
 									<ul>
 										<li>Hoth</li>
 										<li>Estrella de la Muerte</li>
 									</ul>
-									<p>total: ?</p>
+									<p>total: </p>
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-secondary"
@@ -164,7 +163,7 @@
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-primary"
 						data-bs-toggle="modal" data-bs-target="#exampleModal">
-						hola</button>
+						comprar</button>
 
 					<!-- Modal -->
 					<div class="modal fade" id="exampleModal" tabindex="-1"
@@ -172,7 +171,7 @@
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">holi</h5>
+									<h5 class="modal-title" id="exampleModalLabel">comprar</h5>
 									<button type="button" class="btn-close" data-bs-dismiss="modal"
 										aria-label="Close"></button>
 								</div>
@@ -215,7 +214,7 @@
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-primary"
 						data-bs-toggle="modal" data-bs-target="#exampleModal">
-						Launch demo modal</button>
+						Comprar</button>
 
 					<!-- Modal -->
 					<div class="modal fade" id="exampleModal" tabindex="-1"
@@ -223,7 +222,7 @@
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+									<h5 class="modal-title" id="exampleModalLabel">asdfasdf</h5>
 									<button type="button" class="btn-close" data-bs-dismiss="modal"
 										aria-label="Close"></button>
 								</div>
@@ -262,7 +261,7 @@
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-primary"
 						data-bs-toggle="modal" data-bs-target="#exampleModal">
-						Launch demo modal</button>
+						Comprar</button>
 
 					<!-- Modal -->
 					<div class="modal fade" id="exampleModal" tabindex="-1"
@@ -309,7 +308,7 @@
 				</div>
 				<!-- Button trigger modal -->
 				<button type="button" class="btn btn-primary" data-bs-toggle="modal"
-					data-bs-target="#exampleModal">Launch demo modal</button>
+					data-bs-target="#exampleModal">Comprar</button>
 
 				<!-- Modal -->
 				<div class="modal fade" id="exampleModal" tabindex="-1"
@@ -355,7 +354,7 @@
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-primary"
 						data-bs-toggle="modal" data-bs-target="#exampleModal">
-						Launch demo modal</button>
+						Comprar</button>
 
 					<!-- Modal -->
 					<div class="modal fade" id="exampleModal" tabindex="-1"
@@ -402,7 +401,7 @@
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-primary"
 						data-bs-toggle="modal" data-bs-target="#exampleModal">
-						Launch demo modal</button>
+						Comprar</button>
 
 					<!-- Modal -->
 					<div class="modal fade" id="exampleModal" tabindex="-1"
@@ -449,7 +448,7 @@
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-primary"
 						data-bs-toggle="modal" data-bs-target="#exampleModal">
-						Launch demo modal</button>
+						Comprar</button>
 
 					<!-- Modal -->
 					<div class="modal fade" id="exampleModal" tabindex="-1"
@@ -496,7 +495,7 @@
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-primary"
 						data-bs-toggle="modal" data-bs-target="#exampleModal">
-						Launch demo modal</button>
+						Comprar</button>
 
 					<!-- Modal -->
 					<div class="modal fade" id="exampleModal" tabindex="-1"
@@ -544,7 +543,7 @@
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-primary"
 						data-bs-toggle="modal" data-bs-target="#exampleModal">
-						Launch demo modal</button>
+						Comprar</button>
 
 					<!-- Modal -->
 					<div class="modal fade" id="exampleModal" tabindex="-1"
@@ -591,7 +590,7 @@
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-primary"
 						data-bs-toggle="modal" data-bs-target="#exampleModal">
-						Launch demo modal</button>
+						Comprar</button>
 
 					<!-- Modal -->
 					<div class="modal fade" id="exampleModal" tabindex="-1"
@@ -622,14 +621,14 @@
 
 <footer class="foot">
 	<p style="color: #ffe81f">"Star Wars" pertenece a Disney, todos los
-		derechos reservados ™</p>
+		derechos reservados</p>
 	<p style="color: #ffe81f">By: Grupo prisma</p>
 	<a href="https://github.com/Grupo-PRISMA">Nuestro github</a>
 	<p style="color: #ffe81f">Made: with love</p>
-	<a href="#" class="fa fa-facebook"></a>
-	<a href="#"class="fa fa-twitter"></a> 
-	<a href="#" class="fa fa-youtube"></a> 
-	<a href="#" class="fa fa-instagram"></a>
+	<a href="www.facebook.com/starwarsla/" class="fa fa-facebook"></a>
+	<a href="https://twitter.com/starwars"class="fa fa-twitter"></a> 
+	<a href="https://www.youtube.com/c/Disney" class="fa fa-youtube"></a> 
+	<a href="https://www.instagram.com/santi.posse/" class="fa fa-instagram"></a>
 </footer>
 
 </html>
