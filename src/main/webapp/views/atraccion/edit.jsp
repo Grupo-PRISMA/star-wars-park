@@ -18,7 +18,7 @@
 		</c:if>
 
 		<form action="/star-wars-park/atraccion/edit.do" method="post">
-			<input type="hidden" name="id" value="${atraccion.id}">
+			<input type="hidden" name="id" value="${atraccion.getId()}">
 			<jsp:include page="/views/atraccion/form.jsp"></jsp:include>
 		</form>
 	</main>

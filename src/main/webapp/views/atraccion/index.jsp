@@ -38,6 +38,7 @@
 				</a>
 			</div>
 		</c:if>
+		
 		<table class="table table-stripped table-hover">
 			<thead>
 				<tr>
@@ -68,7 +69,7 @@
 
 								<c:when
 									test="${usuario.puedePagar(atraccion) && usuario.tieneTiempo(atraccion) && atraccion.tieneCupo(1)}">
-									<a href="/star-wars-park/atraccion/buy.do?id=${atraccion.id}"
+									<a href="/star-wars-park/atraccion/buy.do?id=${atraccion.getId()}"
 										class="btn btn-success rounded" role="button">Comprar</a>
 								</c:when>
 								<c:otherwise>

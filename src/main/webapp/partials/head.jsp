@@ -21,3 +21,10 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
   
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+<link href="assets/librerias/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/librerias/css/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/librerias/css/estilo.css" rel="stylesheet">
+<link rel="stylesheet" 
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="assets/librerias/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/funciones.js"></script>

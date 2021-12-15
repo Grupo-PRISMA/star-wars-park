@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../librerias/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../librerias/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="../librerias/DataTables/datatables.min.css" />
+    <script type="text/javascript" src="../librerias/DataTables/datatables.min.js"></script>
+    <link rel="stylesheet" href="../librerias/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="../librerias/js/dataTables.bootstrap5.min.js">
+    <link href="../css/estilo.css" rel="stylesheet">
+
+    <title>Promociones Listados</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <div class="container-fluid">
+            <a href="../index.html" style="text-decoration: none;"><span class="navbar-brand mb-0 h1 fs-3">STAR WARS
+                    PARK</span></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuColapsable"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuColapsable">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                    <li class="nav-item">
+                        <a href="visitantes_lista.html" class="nav-link">Visitantes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="atracciones_lista.html" class="nav-link">Atracciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tipos_de_atracciones_lista.html" class="nav-link">Tipo de atracciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="promociones_lista.html" class="nav-link">Promociones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Listados</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="width:50%;margin-left:10%;margin-top:5%;">
+
+
+        <table id="example" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+
+                    <th>Tipo de Promocion</th>
+                    <th>Pack</th>
+                    <th>Atracciones</th>
+                    <th>Descuento/Gratis</th>
+                    <th>Costo</th>
+                    <th>Tiempo</th>
+                    <th>Estado</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Absoluta</td>
+                    <td>Aventura</td>
+                    <td>Atracion 1</td>
+                    <td>$ 20</td>
+                    <td>$ 50</td>
+                    <td>6</td>
+                    <td>Activo</td>
+
+                </tr>
+                <tr>
+                    <td>Porcentual</td>
+                    <td>Paisaje</td>
+
+                    <td>Atracion 1</td>
+                    <td>$ 20</td>
+                    <td>$ 50</td>
+                    <td>6</td>
+                    <td>Activo</td>
+                </tr>
+                <tr>
+                    <td>AxB</td>
+                    <td>Degustacion</td>
+                    <td>Atracion 1</td>
+                    <td>$ 20</td>
+                    <td>$ 50</td>
+                    <td>6</td>
+                    <td>Activo</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+
+                    <th>Tipo de Promocion</th>
+                    <th>Pack</th>
+                    <th>Atracciones</th>
+                    <th>Descuento/Gratis</th>
+                    <th>Costo</th>
+                    <th>Tiempo</th>
+                    <th>Estado</th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <button style="margin-top:5%;margin-left:90%;"> Agregar</button>
+    </div>
+
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

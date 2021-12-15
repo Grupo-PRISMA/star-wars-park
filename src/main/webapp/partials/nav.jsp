@@ -22,7 +22,7 @@ if (fin != -1) {
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav me-auto mb-2 mb-md-0">
-				<c:if test="${usuario.admin}">
+				<c:if test="${usuario.isAdmin()}">
 				<li class="nav-item">
 					<a class="nav-link" aria-current="page" href="/star-wars-park/usuario/index.do">Usuarios</a>
 				</li>
