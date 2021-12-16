@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+@include media-breakpoint-up(xl) {
+	.mensajeBienvenida {
+		//font-size: 1.4rem;
+		color: green !important;
+	}
+}
+
+.imagenFondo {
+	background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('../img/fondo1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+@font-face {
+	font-family: starjedi;
+	src: url("../fuentes/Starjedi.ttf");
+}
+
+/*h1 {
+font-family: starjedi;
+}*/
+
+/*
+.starjedi {
+	font-family: starjedi;
+}
+*/
+.titulo {
+	color: yellow !important;
+	font-size: 2em;
+	text-align:center;
+
+}
+
+.mensajeBienvenida {
+	color: yellow !important;
+	font-size: 2em;
+	margin-bottom: 20px;
+	margin-top: 100px;
+}
+
+.form-signin {
+	width: 100%;
+	max-width: 330px;
+	padding: 15px;
+	margin: auto;
+	
+	/*margin-top: -5%;*/
+}
+
+.form-signin .form-floating:focus-within {
+	z-index: 2;
+}
+
+.form-signin input[type="text"] {
+	margin-bottom: -1px; 
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+/************************************************************************/
+* {
+	font-family: starjedi;
+	text-transform: lowercase;
+}
+
+.navbar-brand {
+	color: yellow !important;
+}
+
+/*.bi-volume-up-fill, .bi-volume-mute-fill {
+	color: gray;
+	font-size: 2em;
+	cursor: pointer;
+}*/
+.nav-link {
+	color: white !important;
+}
+
+.nav-link:hover {
+	color: yellow !important;
+}
+
+.tituloIndex {
+	color: blue !important;
+}

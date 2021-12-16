@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.tituloIndex {
+	color: white !important;
+	font-family: starjedi; 
+	src: url("../fuentes/Starjedi.ttf");
+}
+
+/* no me esta tomando la fuente*/
+@font-face {
+	font-family: starjedi;
+	src: url("../fuentes/Starjedi.ttf");
+}
+
+* {
+	font-family: starjedi;
+	text-transform: lowercase;
+}
+

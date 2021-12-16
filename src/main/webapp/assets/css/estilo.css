@@ -1,0 +1,250 @@
+@charset "UTF-8";
+
+h3 {
+	color: white
+}
+
+h5 {
+	color: #ffe81f
+}
+
+.imagenFondo {
+	background-image: url("../img/fondo_index.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.imagenSugerencia {
+	background-image: url("../img/coruscant.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.card {
+	background-image: url("../img/test2.jpg");
+	background-size: 100%;
+	color: #ffe81f;
+	border-color: white;
+}
+
+.id {
+	background-image: url("../img/banner2.jpeg");
+	background-size: 100%;
+	color: #ffe81f;
+	border-color: white;
+}
+
+@font-face {
+	font-family: starjedi;
+	src: url("../fuentes/Starjedi.ttf");
+}
+
+* {
+	font-family: starjedi;
+	text-transform: lowercase;
+}
+
+.tituloIndex {
+	color: white !important;
+}
+
+.form-signin {
+	width: 100%;
+	max-width: 330px;
+	padding: 15px;
+	margin: auto;
+	margin-top: -5%;
+}
+
+.form-signin .form-floating:focus-within {
+	z-index: 2;
+}
+
+.form-signin input[type="text"] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+/************************/
+.navbar-brand {
+	position: static;
+	color: yellow !important;
+}
+
+.nav-link:hover {
+	color: yellow !important;
+}
+
+
+.texto {
+	background-color: #ffe81f;
+	position: relative;
+	left: 90%;
+	top: 50%;
+	transform: translate(-90%, -50%);
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 100px;
+	grid-auto-rows: minmax(100px, auto);
+}
+
+.one {
+	grid-column: 1;
+	grid-row: 1;
+	border: none;
+}
+
+.two {
+	grid-column: 2;
+	grid-row: 1;
+	border: none;
+}
+
+.three {
+	grid-column: 3;
+	grid-row: 1;
+	border: none;
+}
+
+.four {
+	grid-column: 1;
+	grid-row: 2;
+	border: none;
+}
+
+.five {
+	grid-column: 2;
+	grid-row: 2;
+	border: none;
+}
+
+.six {
+	grid-column: 3;
+	grid-row: 2;
+	border: none;
+}
+
+.seven {
+	grid-column: 1;
+	grid-row: 3;
+	border: none;
+}
+
+.eight {
+	grid-column: 2;
+	grid-row: 3;
+	border: none;
+}
+
+.nine {
+	grid-column: 3;
+	grid-row: 3;
+	border: none;
+}
+
+.ten {
+	grid-column: 1;
+	grid-row: 4;
+	border: none;
+}
+
+.eleven {
+	grid-column: 2;
+	grid-row: 4;
+	border: none;
+}
+
+.center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.modal-header {
+	background-color: #212529;
+}
+
+.modal-body {
+	background-image: url("assets/img/test2.jpg");
+	background-size: cover;
+}
+
+.modal-footer {
+	background-color: #212529;
+}
+
+.offcanvas-header {
+	background-color: #212529;
+}
+
+.offcanvas-body {
+	background-image: url("assets/img/vader.jpg");
+	background-repeat: round;
+	background-size: 100%;
+}
+
+/************************/
+.fa-facebook {
+	background: #3B5998;
+	color: white;
+}
+
+.fa {
+	padding: 20px;
+	font-size: 30px;
+	width: 30px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 50%;
+}
+
+footer {
+	text-align: center;
+	font-size: small;
+	
+}
+
+.fa {
+	padding: 20px;
+	font-size: 30px;
+	width: 50px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+}
+
+.fa:hover {
+	opacity: 0.7;
+}
+
+.fa-facebook {
+	background: #3B5998;
+	color: white;
+}
+
+.fa-twitter {
+	background: #55ACEE;
+	color: white;
+}
+
+.fa-youtube {
+	background: #bb0000;
+	color: white;
+}
+
+.fa-instagram {
+	background: #125688;
+	color: white;
+}
+
