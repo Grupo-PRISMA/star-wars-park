@@ -29,3 +29,4 @@
 <script src="assets/librerias/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/funciones.js"></script>
 <link href="//db.onlinewebfonts.com/c/0c724f6aa457310440cf8949c615cbd7?family=Star+Jedi" rel="stylesheet" type="text/css"/>
+<link href= "assets/fuentes/Star Jedi V1.ttf">

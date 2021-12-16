@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-body {
-	background-image: url("assets/img/hyperspace.jpg");
-}
-
 h3 {
 	color: white
 }
@@ -12,15 +8,9 @@ h5 {
 	color: #ffe81f
 }
 
-.imagenFondo {
-	background-image: url("assets/img/hyperspace.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
 @font-face {
 	font-family: "Star Jedi";
-	src: url("assets/fuentes/Star Jedi V1.ttf");
+	src: url("assets/fuentes/@font-face/Star Jedi V1.ttf");
 }
 
 /*h1 {
@@ -63,17 +53,8 @@ font-family: starjedi;
 }
 
 .navbar {
-	position: relative;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
-	padding-top: 2rem;
-	padding-bottom: 0.5rem;
-	background: rgb(1,1,3);
-	background: linear-gradient(333deg, rgba(1,1,3,1) 19%, rgba(56,85,116,1) 100%, rgba(121,155,183,1) 100%);
+	font-family: "Star Jedi";
 }
-
 
 .navbar-brand {
 	position: static;
@@ -84,7 +65,6 @@ font-family: starjedi;
 .nav-link:hover {
 	color: yellow !important;
 }
-
 
 .texto {
 	background-color: #ffe81f;
