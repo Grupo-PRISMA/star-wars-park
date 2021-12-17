@@ -46,17 +46,9 @@
 							<a href="/star-wars-park/tipo-atraccion/editar.do?id=${tipo.getTipo()}" class="btn btn-light rounded-0" role="button">
 								<i class="bi bi-pencil-fill"></i>
 							</a>
-							<a href="/star-wars-park/tipo-atraccion/borrar.do?id=${tipo.getTipo()}"
-							class="btn btn-<c:out value="${tipo.isActivo() ? 'success' : 'danger'}"></c:out> rounded" role="button">
-								<c:choose>
-									<c:when test="${tipo.isActivo()}">
-										<i class="bi bi-check"></i>
-									</c:when>
-									<c:otherwise>
-										<i class="bi bi-x-circle-fill"></i>
-									</c:otherwise>
-								</c:choose>
-							</a>
+							<span class="qform-check form-switch qbtn btn-lightd rounded-0">
+								<input class="form-check-input" type="checkbox" onclick="cambiar('tipo-atraccion', '<c:out value="${tipo.getTipo()}"></c:out>')" <c:out value="${tipo.isActivo() ? 'checked' : ''}"></c:out>>
+							</span>
 						</td>
 					</tr>
 				</c:forEach>
@@ -83,6 +75,10 @@ $(document).ready(function() {
         "zeroRecords":    "No matching records found",
     }});
 } );
+
+function cambiar(entidad, id) {
+	window.location = "/star-wars-park/" + entidad + "/borrar.do?id=" + id;
+}
 </script>
 
 </body>

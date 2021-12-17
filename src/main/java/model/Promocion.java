@@ -96,9 +96,12 @@ public abstract class Promocion {
 
 	@Override
 	public String toString() {
-		String texto = this.nombreAtracciones().toString();
-
-		return texto;
+		String texto = "";
+		for(String nombre : this.nombreAtracciones()) {
+			texto +=  ", " + nombre;
+		}
+		
+		return texto.substring(2);
 	}
 	
 	public int getId() {

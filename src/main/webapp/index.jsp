@@ -4,9 +4,11 @@
 <html>
 <head>
 <jsp:include page="partials/head.jsp"></jsp:include>
-
 <link href="assets/css/estilo.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">p.promo{-webkit-text-stroke: 1px black; color: yellow; font-size:1.4em; }</style>
+
+
 </head>
 
 <body class="imagenFondo">
@@ -16,7 +18,7 @@
 	<main class="container">
 	<hr>
 		<h3 class="tituloIndex">
-				Bienvenido/a <c:out value="${usuario.getNombre()}" />
+				Hola <c:out value="${usuario.getNombre()}" />
 			</h3>
 		
 	<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -34,23 +36,23 @@
 					<img src="assets/img/promo_porcentual.jpg" class="d-block w-100"
 						alt="Promocion Porcentual">
 					<div class="carousel-caption d-none d-md-block">
-						<h5>Pack Aventura</h5>
-						<h5>Hoth y Estrella de la muerte</h5>
+						<p class="promo">Pack Aventura </p>
+						<p class="promo">Hoth y Estrella de la muerte</p>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<img src="assets/img/promo_absoluta.jpg" class="d-block w-100"
 						alt="Promocion Absoluta">
 					<div class="carousel-caption d-none d-md-block">
-						<h5>Pack Degustación</h5>
-						<h5>Coruscant y Geonosis</h5>
+						<p class="promo">Pack Degustación</p>
+						<p class="promo">Coruscant y Geonosis</p>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<img src="assets/img/promo_AxB.jpg" class="d-block w-100" alt="Promocion AxB">
 					<div class="carousel-caption d-none d-md-block">
-						<h5>Pack Paisaje</h5>
-						<h5>Naboo, Tatooine y Kashyyyk</h5>
+						<p class="promo">Pack Paisaje</p>
+						<p class="promo">Naboo, Tatooine y Kashyyyk</p>
 					</div>
 				</div>
 			</div>
@@ -69,7 +71,7 @@
 
 		<p style="color: #ffe81f">"Star Wars" pertenece a Disney, todos los
 		derechos reservados</p>
-		<p style="color: #ffe81f"><a href="https://github.com/Grupo-PRISMA">By: Grupo prisma </a></p>
+		<p><a style="color: white; text-decoration: none;" href="https://github.com/Grupo-PRISMA">By: Grupo prisma </a></p>
 		<a href="www.facebook.com/starwarsla/" class="fa fa-facebook"></a>
 		<a href="https://twitter.com/starwars"class="fa fa-twitter"></a> 
 		<a href="https://www.youtube.com/c/Disney" class="fa fa-youtube"></a> 

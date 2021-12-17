@@ -4,7 +4,6 @@
 <html>
 <head>
 <jsp:include page="head.jsp"></jsp:include>
-
 <link href="assets/css/estilo.css" rel="stylesheet">
 </head>
 

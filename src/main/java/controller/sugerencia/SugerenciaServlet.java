@@ -59,8 +59,8 @@ public class SugerenciaServlet extends HttpServlet implements Servlet {
 			promocionesComunes = this.promocionService.buscarPorOtroTipo(usuario.getPreferencia());
 			atraccionesPreferidas = this.atraccionService.buscarPorTipo(usuario.getPreferencia());
 			atraccionesComunes = this.atraccionService.buscarPorOtroTipo(usuario.getPreferencia());
-			itinerarioPromociones = this.itinerarioService.buscarPromociones();
-			itinerarioAtracciones = this.itinerarioService.buscarAtracciones();
+			itinerarioPromociones = this.itinerarioService.buscarPromociones(usuario.getId());
+			itinerarioAtracciones = this.itinerarioService.buscarAtracciones(usuario.getId());
 			
 			for (Itinerario itinerario : itinerarioPromociones) {
 				idsPromociones.add(itinerario.getIdLugar());

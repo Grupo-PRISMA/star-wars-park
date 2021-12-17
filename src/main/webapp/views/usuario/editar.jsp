@@ -78,17 +78,18 @@
 				  	value="${usuario.getTiempoDisponibleHs() < 0 ? '' : usuario.getTiempoDisponibleHs()}" onblur="validarNumero(this);">
 				</div>
 			</div>
-			
 			<div class="mb-3 col-md-4 offset-md-3">
 				<div class="input-group">
-				  <span class="col-5 input-group-text" id="basic-addon1">Admin</span>
-				  	<input style="width:1em; height:1em;" class="col-5" type="checkbox" name="admin" <c:if test="${usuario.isAdmin()}"><c:out value="checked"/></c:if>> 
+					<span class="col-5 input-group-text" id="basic-addon1">Admin</span>
+					<span class="col-5 form-check form-switch" style="margin-left: 50px; margin-top: 6px;">
+						<input name="admin" class="col-5 form-check-input" type="checkbox" <c:out value="${usuario.isAdmin() ? 'checked' : ''}"></c:out>>
+					</span>
 				</div>
-			</div> 
+			</div>
 		</form>
+		
 			<br>
 			<button class="btn btn-primary" onclick="enviarFormulario();">Guardar</button>
-			<!--<a onclick="window.history.back();" class="btn btn-secondary" role="button">-->
 			<a href="/star-wars-park/usuario/index.do" class="btn btn-secondary" role="button">
 				Cancelar
 			</a>

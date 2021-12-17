@@ -23,14 +23,14 @@
 			
 		<form action="/star-wars-park/login" method="post">
 		<div class="form-floating">
-			<input class="form-control" name="usuario" value="admin">
+			<input class="form-control" name="usuario">
 			<label for="floatingInput">usuario</label>
 			<div class="invalid-feedback">
 	      	</div>
 		</div>
 		
 		<div class="form-floating">
-			<input type="password" class="form-control" name="clave" value="admin">
+			<input type="password" class="form-control" name="clave">
 			<label for="floatingPassword">contraseña</label>
 		</div>
 		
@@ -40,10 +40,12 @@
 
 	
 	</form>
+	
 </main>
 		
 		
 		
 	</div>
+	
 </body>
 </html>

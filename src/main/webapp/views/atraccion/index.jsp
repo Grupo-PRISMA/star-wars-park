@@ -54,17 +54,9 @@
 							<a href="/star-wars-park/atraccion/editar.do?id=${atraccion.getId()}" class="btn btn-light rounded-0" role="button">
 								<i class="bi bi-pencil-fill"></i>
 							</a>
-							<a href="/star-wars-park/atraccion/borrar.do?id=${atraccion.getId()}"
-							class="btn btn-<c:out value="${atraccion.isActivo() ? 'success' : 'danger'}"></c:out> rounded" role="button">
-								<c:choose>
-									<c:when test="${atraccion.isActivo()}">
-										<i class="bi bi-check"></i>
-									</c:when>
-									<c:otherwise>
-										<i class="bi bi-x-circle-fill"></i>
-									</c:otherwise>
-								</c:choose>
-							</a>
+							<span class="qform-check form-switch qbtn btn-lightd rounded-0">
+								<input class="form-check-input" type="checkbox" onclick="cambiar('atraccion', '<c:out value="${atraccion.getId()}"></c:out>')" <c:out value="${atraccion.isActivo() ? 'checked' : ''}"></c:out>>
+							</span>
 						</td>
 					</tr>
 				</c:forEach>
@@ -90,6 +82,10 @@ $(document).ready(function() {
         "zeroRecords":    "No matching records found",
     }});
 } );
+
+function cambiar(entidad, id) {
+	window.location = "/star-wars-park/" + entidad + "/borrar.do?id=" + id;
+}
 </script>
 
 </body>

@@ -6,7 +6,5 @@ public class Mensajes {
 	public static String ERROR_INVALIDO = "%s es inválido";
 	public static String ERROR_NUMERO = "%s debe ser un número igual o mayor a cero";
 	public static String EXITO_ALTA = "Se ingresó %s con exitó";
-	public static String EXITO_ACTUALIZACION = "Se modificó %s con exitó";
-		
-
+	public static String EXITO_ACTUALIZACION = "Se modificó %s con éxito";
 }

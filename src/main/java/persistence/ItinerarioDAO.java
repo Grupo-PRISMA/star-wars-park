@@ -148,8 +148,8 @@ public class ItinerarioDAO extends DAOGenerico<Itinerario> {
 //		return declaracion.executeUpdate();
 //	}
 	
-	public ArrayList<Itinerario> buscarPorTipo(String tipo) throws SQLException {
-		return super.ejecutarSelect("SELECT * FROM itinerario WHERE tipo_lugar = '" + tipo + "'");
+	public ArrayList<Itinerario> buscarPorTipo(String tipo, int idUsusario) throws SQLException {
+		return super.ejecutarSelect("SELECT * FROM itinerario WHERE id_visitante = " + idUsusario + " AND tipo_lugar = '" + tipo + "'");
 	}
 
 	public ArrayList<Itinerario> buscarTodoPorIdUsuario(int idUsuario) throws SQLException {

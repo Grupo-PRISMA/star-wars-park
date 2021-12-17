@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
     		System.out.println("Error en login: " + e.getMessage());
     	}
     	
-    	if (usuarioIdentificado != null) {
+    	if (usuarioIdentificado != null && usuarioIdentificado.isActivo()) {
     		req.getSession().setAttribute("usuario", usuarioIdentificado);
     		resp.sendRedirect("index.jsp");    		
        	} else {

@@ -10,6 +10,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jdk.internal.misc.FileSystemOption;
 import model.TipoAtraccion;
 import model.Usuario;
 import services.TipoAtraccionService;
@@ -114,9 +115,23 @@ public class EditarUsuarioServlet extends HttpServlet {
 					this.usuarioService.actualizar(usuario);
 					req.getSession(false).setAttribute("mensaje", String.format(Mensajes.EXITO_ACTUALIZACION, "usuario"));
 					
+//					// si el usuario que se modifico es el que esta actualmente en el sistema, se actualiza la session
+//					Usuario usuarioLogeado = (Usuario) req.getSession().getAttribute("usuario");
+//					
+//					System.out.println(usuarioLogeado.getId() + " -> " + usuario.getId());
+//					if (usuarioLogeado.getId() == usuario.getId()) {
+//						System.out.println("update!");
+//						//req.getSession().removeAttribute("usuario");
+//						req.getSession(false).setAttribute("usuario", usuarioLogeado);
+//					}
 				}
 				
-				resp.sendRedirect("/star-wars-park/usuario/index.do");
+				req.setAttribute("usuario", usuario);
+				req.setAttribute("usuarios", this.usuarioService.listar());
+				//System.out.println(usuario.getPresupuesto());
+				//resp.sendRedirect("/star-wars-park/usuario/index.do");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/usuario/index.jsp");
+				dispatcher.forward(req, resp);
 
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -134,8 +149,23 @@ public class EditarUsuarioServlet extends HttpServlet {
 			}
 		
 			req.setAttribute("errores", errores);
-			req.setAttribute("usuario", usuario);
 			req.setAttribute("tipos", tipos);
+			
+			// si el usuario que se modifico es el que esta actualmente en el sistema, se actualiza la session
+			Usuario usuarioLogeado = (Usuario) req.getSession().getAttribute("usuario");
+					
+//			System.out.println(usuarioLogeado.getId() + " -> " + usuario.getId());
+//			if (usuarioLogeado.getId() == usuario.getId()) {
+//				//System.out.println("update!");
+//				//req.getSession().removeAttribute("usuario");
+//				//req.getSession(false).setAttribute("usuario", usuarioLogeado);
+//				req.setAttribute("usuario", usuarioLogeado);
+//				
+//			} else {
+				req.setAttribute("usuario", usuario);
+				//System.out.println(usuario.getPresupuesto());
+//			}
+			
 			
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/usuario/editar.jsp");
 			dispatcher.forward(req, resp);

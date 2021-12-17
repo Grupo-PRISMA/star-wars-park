@@ -57,7 +57,7 @@ public class ItinerarioServlet extends HttpServlet implements Servlet {
 					nombres.add(atraccion.getNombre());
 				}
 				
-				it.setAtracciones(new Gson().toJson(nombres));
+				it.setAtracciones(new Gson().toJson(nombres).replace("[", "").replace("]", "").replace("\"", ""));
 				itinerario.set(i, it);
 			}
 		} catch (SQLException e) {
